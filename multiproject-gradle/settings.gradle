@@ -1,0 +1,5 @@
+rootProject.name = 'multiproject-gradle'
+
+include 'shared'
+include 'services'
+include 'app'
