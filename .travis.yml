@@ -1,0 +1,31 @@
+language: java
+
+sudo: false
+
+before_cache:
+  - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
+  - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
+cache:
+ directories:
+   - $HOME/.m2
+   - $HOME/.gradle/caches/
+   - $HOME/.gradle/wrapper/
+
+jdk:
+  - oraclejdk8
+
+script: 
+  - cd helloworld-maven
+  - mvn clean install
+  - cd ../helloworld-gradle
+  - gradle build
+  - gradle test
+  - cd ..
+
+branches:
+  only:
+    - master
+
+notifications:
+  email:
+    - johnsmith1st@live.com
