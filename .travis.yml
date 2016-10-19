@@ -14,13 +14,7 @@ cache:
 jdk:
   - oraclejdk8
 
-script: 
-  - cd helloworld-maven
-  - mvn clean install
-  - cd ../helloworld-gradle
-  - gradle build
-  - gradle test
-  - cd ..
+script: sh build.sh
 
 branches:
   only:
